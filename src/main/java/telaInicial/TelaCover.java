@@ -1,11 +1,41 @@
 
 package telaInicial;
 
-public class TelaCover extends javax.swing.JFrame {
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
-    public TelaCover() {
+public class TelaCover extends javax.swing.JFrame {
+    public static void PlayMusic(String location) throws UnsupportedAudioFileException, IOException{
+        
+        File musicPath = new File(location);
+            
+        if(musicPath.exists()){
+            try {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            } catch (LineUnavailableException ex) {
+                Logger.getLogger(TelaCover.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            System.out.println("Arquivo de audio nao achado");
+        }
+    }
+    public TelaCover() throws UnsupportedAudioFileException, IOException {
         initComponents();
         setLocationRelativeTo(null);
+        String filepath = "inicio.wav";
+        PlayMusic(filepath);
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -76,7 +106,13 @@ public class TelaCover extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new TelaCover().setVisible(true);
+            try {
+                new TelaCover().setVisible(true);
+            } catch (UnsupportedAudioFileException ex) {
+                Logger.getLogger(TelaCover.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaCover.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 

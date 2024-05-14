@@ -9,7 +9,7 @@ public class TocarSomIn{
     
     public void sound_click(){
         try{
-            File sound = new File("C:\\repositorio\\AsAventurasDeBrolli\\click.wav");
+            File sound = new File("C:\\repositorio\\Jogo\\click.wav");
             Clip c = AudioSystem.getClip();
             c.open(AudioSystem.getAudioInputStream(sound));
             c.start();
@@ -17,3 +17,4 @@ public class TocarSomIn{
         }
     }           
 }
+//C:\\repos\\AsAventurasDeBrolli\\click.wav
