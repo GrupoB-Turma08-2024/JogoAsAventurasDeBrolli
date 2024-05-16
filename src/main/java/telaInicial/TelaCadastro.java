@@ -9,7 +9,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     public TelaCadastro() {
         initComponents();
         this.setLocationRelativeTo(null);
-        emailText.setText("Digite o usuário");
+        emailText.setText("Digite o email");
         senhaText.setText("Digite a senha");
         serieText.setText("Digite a série");
     }
@@ -163,12 +163,12 @@ public class TelaCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void emailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusGained
-        if(emailText.getText().equals("Digite o usuário"))    
+        if(emailText.getText().equals("Digite o email"))    
             emailText.setText("");
     }//GEN-LAST:event_emailTextFocusGained
     private void emailTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusLost
         if(emailText.getText().equals("")){
-            emailText.setText("Digite o usuário");
+            emailText.setText("Digite o email");
         }
     }//GEN-LAST:event_emailTextFocusLost
 
