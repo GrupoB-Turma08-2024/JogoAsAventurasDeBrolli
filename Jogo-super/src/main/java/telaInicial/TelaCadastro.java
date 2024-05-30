@@ -242,7 +242,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         boolean c = isDomainValid(email);
         if (b == true && c == true){
             try {
-                a = new Usuario(usuarioText.getText(), senhaText.getText(), email);
+                a = new Usuario(usuarioText.getText(), email, senhaText.getText());
                 dao.cadastrarUsuario(a);
                 System.out.println("Usuario cadastrado");
             } catch (Exception ex) {
