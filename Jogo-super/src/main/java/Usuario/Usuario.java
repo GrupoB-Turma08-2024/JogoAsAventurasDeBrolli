@@ -13,6 +13,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private int Serie;
     
     public Usuario(String nome, String senha) throws Exception{
         this.setNome(nome);
@@ -22,6 +23,20 @@ public class Usuario {
         this.setNome(nome);
         this.setEmail(email);
         this.setSenha(senha);
+    }
+    public Usuario(String nome, String email, String senha, int serie) throws Exception {
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setSenha(senha);
+        this.setSerie(serie);
+    }
+
+    public int getSerie() {
+        return Serie;
+    }
+
+    public void setSerie(int Serie) {
+        this.Serie = Serie;
     }
     public Usuario(String nome, String email, String email2, String senha) throws Exception {
         this.setNome(nome);

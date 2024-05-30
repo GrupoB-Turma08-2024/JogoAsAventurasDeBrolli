@@ -190,6 +190,11 @@ public class TelaAlterar extends javax.swing.JFrame {
         });
 
         jButton2.setText("Limpar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -361,6 +366,19 @@ public class TelaAlterar extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        txtFase.setText("");
+        txtDificuldade.setText("");
+        txtPergunta.setText("");
+        txtA.setText("");
+        txtB.setText("");
+        txtC.setText("");
+        txtD.setText("");
+        txtCorreta.setText("");
+        txtExplicacao.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

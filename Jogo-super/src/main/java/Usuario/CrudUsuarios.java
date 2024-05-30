@@ -4,6 +4,11 @@
  */
 package Usuario;
 
+import Connection.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -40,6 +45,21 @@ public class CrudUsuarios extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao carregar usuários", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    public static boolean usuarioExiste(String nomeUsuario) throws Exception {
+        String query = "SELECT COUNT(*) FROM Jogador WHERE nomeJogador = ?";
+        try (Connection conn = ConnectionFactory.obterConexao();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, nomeUsuario);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,7 +124,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
             }
         });
 
-        ButAlterar.setText("Alterar");
+        ButAlterar.setText("Atualizar");
         ButAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButAlterarActionPerformed(evt);
@@ -118,7 +138,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
             }
         });
 
-        ButNovo.setText("Novo");
+        ButNovo.setText("Criar Usuário");
         ButNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButNovoActionPerformed(evt);
@@ -165,7 +185,7 @@ public class CrudUsuarios extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(ButAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                         .addComponent(ButRemover)
                         .addGap(130, 130, 130)
                         .addComponent(ButNovo)
@@ -216,17 +236,20 @@ public class CrudUsuarios extends javax.swing.JFrame {
     private void ButSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButSalvarActionPerformed
         // TODO add your handling code here:
 
-        
+        String nome = txtNome.getText();
         boolean validacao = true;
-        try
-        {
-            Usuario u = new Usuario(txtNome.getText(), txtEmail.getText(), txtSenha.getText());
-            validacao = false;
+        try{
+                if (!usuarioExiste(nome)) {
+                    Usuario u = new Usuario(nome, txtEmail.getText(), txtSenha.getText());
+                    validacao = false;
             
-            UsuarioService.insert(u);
+                    UsuarioService.insert(u);
             
-            this.getUsuarios();
-            limparCampos();
+                    this.getUsuarios();
+                    limparCampos();
+                }else{
+                    JOptionPane.showMessageDialog(this,"Usuario já existe");
+                }
         }
         catch (Exception e)
         {

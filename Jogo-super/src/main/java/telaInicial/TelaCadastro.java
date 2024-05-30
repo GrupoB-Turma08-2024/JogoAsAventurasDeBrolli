@@ -47,8 +47,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         loginTitulo = new javax.swing.JLabel();
         emailText = new javax.swing.JTextField();
         usuarioText = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        serietxt = new javax.swing.JTextField();
         telaLogin = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1000, 562));
@@ -160,14 +161,18 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, 180, 30));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("copyright © As Aventuras De Brolli All rights reserved ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 20));
+        serietxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        serietxt.setToolTipText("Digite sua série");
+        serietxt.setBorder(null);
+        getContentPane().add(serietxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 180, -1));
 
         telaLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaCadastro5.jpg"))); // NOI18N
         getContentPane().add(telaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel1.setText("copyright © As Aventuras De Brolli All rights reserved ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -238,11 +243,13 @@ public class TelaCadastro extends javax.swing.JFrame {
         var dao = new DAO(); 
             Usuario a;
         String email = emailText.getText();
+        String s = serietxt.getText();
+        int serie = Integer.parseInt(s);
         boolean b = isValidEmail(email);
         boolean c = isDomainValid(email);
         if (b == true && c == true){
             try {
-                a = new Usuario(usuarioText.getText(), email, senhaText.getText());
+                a = new Usuario(usuarioText.getText(), email, senhaText.getText(), serie);
                 dao.cadastrarUsuario(a);
                 System.out.println("Usuario cadastrado");
             } catch (Exception ex) {
@@ -301,6 +308,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel loginTitulo;
     private javax.swing.JPasswordField senhaText;
+    private javax.swing.JTextField serietxt;
     private javax.swing.JLabel telaLogin;
     private javax.swing.JTextField usuarioText;
     // End of variables declaration//GEN-END:variables
