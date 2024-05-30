@@ -4,18 +4,36 @@ package telaInicial;
 import Connection.DAO;
 import Usuario.Usuario;
 import java.awt.Color;
+import java.net.InetAddress;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class TelaCadastro extends javax.swing.JFrame {
-
+    private static final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
     public TelaCadastro() {
         initComponents();
         this.setLocationRelativeTo(null);
         emailText.setText("Digite o email");
         senhaText.setText("senha");
         usuarioText.setText("Digite o usuário");
+    }
+    public static boolean isValidEmail(String email) {
+        if (email == null) return false;
+        Matcher matcher = EMAIL_PATTERN.matcher(email);
+        return matcher.matches();
+    }
+    public static boolean isDomainValid(String email) {
+        try {
+            String domain = email.substring(email.indexOf("@") + 1);
+            InetAddress.getByName(domain);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -219,12 +237,19 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void cadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBotaoActionPerformed
         var dao = new DAO(); 
             Usuario a;
-        try {
-            a = new Usuario(usuarioText.getText(), senhaText.getText(), emailText.getText());
-            dao.cadastrarUsuario(a);
-            System.out.println("Usuario cadastrado");
-        } catch (Exception ex) {
-            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+        String email = emailText.getText();
+        boolean b = isValidEmail(email);
+        boolean c = isDomainValid(email);
+        if (b == true && c == true){
+            try {
+                a = new Usuario(usuarioText.getText(), senhaText.getText(), email);
+                dao.cadastrarUsuario(a);
+                System.out.println("Usuario cadastrado");
+            } catch (Exception ex) {
+                Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            System.out.print("Email não valido");
         }
     }//GEN-LAST:event_cadastrarBotaoActionPerformed
 
