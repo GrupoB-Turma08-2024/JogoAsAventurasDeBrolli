@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package CrudQuestoes;
 
 import Connection.ConnectionFactory;
@@ -9,10 +6,7 @@ import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-/**
- *
- * @author felip
- */
+
 public class QuestoesService {
     public static ArrayList<Questoes> get(String fase) throws Exception{
         ArrayList<Questoes> questoes = new ArrayList<Questoes>();

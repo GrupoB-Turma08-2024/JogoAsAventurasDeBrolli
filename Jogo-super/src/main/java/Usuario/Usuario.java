@@ -13,22 +13,35 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    
-    public Usuario(String nome, String senha) throws Exception{
+    private int Serie;
+
+    public Usuario(String nome, String senha) throws Exception {
         this.setNome(nome);
         this.setSenha(senha);
     }
-    public Usuario(String nome, String email, String senha) throws Exception {
+
+    public Usuario(String nome, String email, String senha, int Serie) throws Exception {
         this.setNome(nome);
         this.setEmail(email);
         this.setSenha(senha);
+        this.setSerie(serie);
     }
+
+    public int getSerie() {
+        return serie;
+    }
+
+    public void setSerie(int Serie) {
+        this.Serie = Serie;
+    }
+
     public Usuario(String nome, String email, String email2, String senha) throws Exception {
         this.setNome(nome);
         this.setEmail(email);
         this.setEmail(email2);
         this.setSenha(senha);
     }
+
     public Usuario(int idUsuario, String nome, String email, String email2, String senha) throws Exception {
         this.setIdUsuario(idUsuario);
         this.setNome(nome);
@@ -36,12 +49,12 @@ public class Usuario {
         this.setEmail(email2);
         this.setSenha(senha);
     }
-   
-    public Usuario(int idUsuario, String nome, String email, String senha) throws Exception{
-        this(nome,email, senha);
+
+    public Usuario(int idUsuario, String nome, String email, String senha) throws Exception {
+        this(nome, email, senha);
         this.setIdUsuario(idUsuario);
     }
-    
+
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -66,7 +79,6 @@ public class Usuario {
         this.email = email;
     }
 
-
     public String getSenha() {
         return senha;
     }
@@ -74,5 +86,4 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
 }

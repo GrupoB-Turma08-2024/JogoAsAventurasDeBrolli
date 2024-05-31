@@ -4,6 +4,8 @@
  */
 package CrudQuestoes;
 
+import telaInicial.TocarSomIn;
+
 /**
  *
  * @author felip
@@ -28,93 +30,102 @@ public class MenuQuestions extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        loginTitulo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         BotCriar = new javax.swing.JButton();
         BotConsultar = new javax.swing.JButton();
         BotAlterar = new javax.swing.JButton();
         BotRemover = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setSize(new java.awt.Dimension(1000, 562));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Gerenciar Questoes");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Bem-vindo à tela de edição de questões.");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, -1));
 
-        BotCriar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        BotCriar.setText("Criar");
+        loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 52)); // NOI18N
+        loginTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        loginTitulo.setText("EDITAR QUESTÕES");
+        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText(" Aqui, você pode atualizar, remover ou criar novas perguntas para o sistema. ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+
+        BotCriar.setBackground(new java.awt.Color(6, 16, 6));
+        BotCriar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BotCriar.setForeground(new java.awt.Color(255, 255, 255));
+        BotCriar.setText("Criar ");
+        BotCriar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BotCriar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotCriar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotCriarActionPerformed(evt);
             }
         });
+        getContentPane().add(BotCriar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 170, 40));
 
-        BotConsultar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BotConsultar.setBackground(new java.awt.Color(6, 16, 6));
+        BotConsultar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BotConsultar.setForeground(new java.awt.Color(255, 255, 255));
         BotConsultar.setText("Consultar");
+        BotConsultar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BotConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotConsultarActionPerformed(evt);
             }
         });
+        getContentPane().add(BotConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 170, 40));
 
-        BotAlterar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BotAlterar.setBackground(new java.awt.Color(6, 16, 6));
+        BotAlterar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BotAlterar.setForeground(new java.awt.Color(255, 255, 255));
         BotAlterar.setText("Alterar");
+        BotAlterar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BotAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotAlterarActionPerformed(evt);
             }
         });
+        getContentPane().add(BotAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 170, 40));
 
-        BotRemover.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BotRemover.setBackground(new java.awt.Color(6, 16, 6));
+        BotRemover.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BotRemover.setForeground(new java.awt.Color(255, 255, 255));
         BotRemover.setText("Remover");
+        BotRemover.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        BotRemover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotRemoverActionPerformed(evt);
             }
         });
+        getContentPane().add(BotRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 170, 40));
 
-        jButton1.setText("Voltar");
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("< Voltar");
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(BotCriar)
-                .addGap(84, 84, 84)
-                .addComponent(BotConsultar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(BotAlterar)
-                .addGap(104, 104, 104)
-                .addComponent(BotRemover)
-                .addGap(41, 41, 41))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(281, 281, 281)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(55, 55, 55))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotAlterar)
-                    .addComponent(BotConsultar)
-                    .addComponent(BotCriar)
-                    .addComponent(BotRemover))
-                .addGap(63, 63, 63)
-                .addComponent(jButton1)
-                .addGap(33, 33, 33))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adm2.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,29 +134,38 @@ public class MenuQuestions extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaInserir inserir = new TelaInserir();
         inserir.setVisible(true);
+        TocarSomIn tocar = new TocarSomIn();
+        tocar.sound_click();
     }//GEN-LAST:event_BotCriarActionPerformed
 
     private void BotConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotConsultarActionPerformed
         // TODO add your handling code here:
         TelaConsultar consultar = new TelaConsultar();
         consultar.setVisible(true);
+        TocarSomIn tocar = new TocarSomIn();
+        tocar.sound_click();
     }//GEN-LAST:event_BotConsultarActionPerformed
 
     private void BotAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotAlterarActionPerformed
         // TODO add your handling code here:
         TelaAlterar alterar = new TelaAlterar();
         alterar.setVisible(true);
+        TocarSomIn tocar = new TocarSomIn();
+        tocar.sound_click();
     }//GEN-LAST:event_BotAlterarActionPerformed
 
     private void BotRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotRemoverActionPerformed
         // TODO add your handling code here:
         TelaRemover remover = new TelaRemover();
         remover.setVisible(true);
+        TocarSomIn tocar = new TocarSomIn();
+        tocar.sound_click();
     }//GEN-LAST:event_BotRemoverActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        dispose();
+        TelaInicialAdm tia = new TelaInicialAdm();
+        tia.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -191,5 +211,8 @@ public class MenuQuestions extends javax.swing.JFrame {
     private javax.swing.JButton BotRemover;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel loginTitulo;
     // End of variables declaration//GEN-END:variables
 }

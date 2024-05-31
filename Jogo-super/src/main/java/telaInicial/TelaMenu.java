@@ -165,7 +165,7 @@ public class TelaMenu extends javax.swing.JFrame {
         );
         if(i == JOptionPane.OK_OPTION) {
         System.out.println("Clicou em ok");
-        TelaLogin tl = TelaLogin();
+        TelaLogin tl = new TelaLogin();
         tl.setVisible(true);
         this.dispose();
         }

@@ -2,6 +2,7 @@
 package telaInicial;
 
 import Connection.DAO;
+import CrudQuestoes.TelaInicialAdm;
 import Usuario.Usuario;
 import java.awt.Color;
 import javax.sound.sampled.AudioSystem;
@@ -122,7 +123,7 @@ public class TelaLogin extends javax.swing.JFrame {
         loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 52)); // NOI18N
         loginTitulo.setForeground(new java.awt.Color(255, 255, 255));
         loginTitulo.setText("LOGIN");
-        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 60, -1, -1));
+        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, -1, -1));
 
         usuarioText.setBackground(new java.awt.Color(0,0,0,1));
         usuarioText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -148,7 +149,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("copyright © As Aventuras De Brolli All rights reserved ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 20));
 
@@ -214,8 +214,8 @@ public class TelaLogin extends javax.swing.JFrame {
             if (dao.existe(u)) {
                 if (dao.existeAdm(u)) {
                     JOptionPane.showMessageDialog(null,"O jogador é um administrador.");
-                    TelaInicialAdm inserir = new TelaInicialAdm();
-                    inserir.setVisible(true);
+                    TelaInicialAdm tia = new TelaInicialAdm();
+                    tia.setVisible(true);
             // Ação para administrador
                 } else {
                     JOptionPane.showMessageDialog(null,"O jogador é um aluno.");
@@ -234,7 +234,7 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         TocarSomIn tocar = new TocarSomIn();
         tocar.sound_click();
-        dispose();
+        
     }//GEN-LAST:event_entrarBotaoActionPerformed
 
     private void esqueciSenhaBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esqueciSenhaBotaoActionPerformed

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package telaRedefinirSenha;
+
 import java.net.InetAddress;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,6 +18,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
 /**
  *
  * @author felip
@@ -26,7 +28,7 @@ public class Email {
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
     private static final String CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static final int LENGTH = 8;
-    
+
     public static String generateCode() {
         Random random = new SecureRandom();
         StringBuilder sb = new StringBuilder(LENGTH);
@@ -36,12 +38,15 @@ public class Email {
         }
 
         return sb.toString();
-    }   
+    }
+
     public static boolean isValidEmail(String email) {
-        if (email == null) return false;
+        if (email == null)
+            return false;
         Matcher matcher = EMAIL_PATTERN.matcher(email);
         return matcher.matches();
     }
+
     public static boolean isDomainValid(String email) {
         try {
             String domain = email.substring(email.indexOf("@") + 1);
@@ -51,6 +56,7 @@ public class Email {
             return false;
         }
     }
+
     public static void sendEmail(String recipientEmail, String code) throws MessagingException {
         String from = "felipeduarteabc@gmail.com";
         String password = "pvpp shkn lmbp iswl";
@@ -72,16 +78,45 @@ public class Email {
         message.setFrom(new InternetAddress(from));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
         message.setSubject("Verification Code");
-        message.setText("Your verification code is: " + code);
+        message.setText(
+                "Aqui é o Brolli, seu fiel aliado no nosso jogo. Recebi uma mensagem urgente de que você precisa redefinir sua senha. Sem problemas, estou aqui para ajudar!\n"
+                        +
+                        "\n" +
+                        "Para garantir que sua conta esteja sempre segura e protegida, por favor, use o código abaixo para redefinir sua senha:\n"
+                        +
+                        "\n" +
+                        "Código de Redefinição: " + code + " \n" +
+                        "\n" +
+                        "Siga estes passos simples para redefinir sua senha:\n" +
+                        "\n" +
+                        "1. Acesse a página de redefinição de senha\n" +
+                        "2. Insira o código de redefinição fornecido acima.\n" +
+                        "3. Crie uma nova senha e confirme-a.\n" +
+                        "\n"
+                        + "Se você não solicitou a redefinição de senha, por favor, ignore este email ou entre em contato com o nosso suporte imediatamente.\n"
+                        +
+                        "\n" +
+                        "Lembre-se, sua segurança é a nossa prioridade! Mantenha sua senha segura e não a compartilhe com ninguém.\n"
+                        +
+                        "\n" +
+                        "Estamos ansiosos para vê-lo de volta ao jogo em breve!\n" +
+                        "\n" +
+                        "Com muita força e determinação,\n" +
+                        "\n" +
+                        "Brolli\n" +
+                        "\n" +
+                        "As Aventuras do Brolli Suporte\n" +
+                        "\n" +
+                        "Se precisar de mais ajuda, sinta-se à vontade para nos contatar. Estamos aqui para você!");
 
         Transport.send(message);
     }
 
     public static void main(String[] args) {
         try {
-            String email = "felipeduarteabc@gmail.com";  // Substitua pelo email que receberá o teste
-            String code = generateCode();  // Gera um código de verificação
-            sendEmail(email, code);  // Envia o e-mail
+            String email = "felipeduarteabc@gmail.com"; // Substitua pelo email que receberá o teste
+            String code = generateCode(); // Gera um código de verificação
+            sendEmail(email, code); // Envia o e-mail
             System.out.println("Email enviado com sucesso!");
         } catch (MessagingException e) {
             e.printStackTrace();

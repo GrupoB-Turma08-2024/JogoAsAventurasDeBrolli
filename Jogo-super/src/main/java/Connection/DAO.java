@@ -70,13 +70,14 @@ public class DAO {
 
         con = ConnectionFactory.obterConexao();
 
-        String sql = "INSERT INTO Jogador (nomeJogador, emailAluno, senhaJogador) VALUES (?,?,?);";
+        String sql = "INSERT INTO Jogador (nomeJogador, emailAluno, senhaJogador, serie) VALUES (?,?,?,?);";
         
         PreparedStatement ps = con.prepareStatement(sql);
         //ps.setLong(1, 3);
         ps.setString(1, Usuario.getNome());
         ps.setString(2, Usuario.getEmail());
         ps.setString(3, Usuario.getSenha());
+        ps.setInt(4, Usuario.getSerie());
 
         // ps.execute();
 

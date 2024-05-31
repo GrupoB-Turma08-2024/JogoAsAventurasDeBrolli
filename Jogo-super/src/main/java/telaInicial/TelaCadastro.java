@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class TelaCadastro extends javax.swing.JFrame {
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
+
     public TelaCadastro() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -21,11 +22,14 @@ public class TelaCadastro extends javax.swing.JFrame {
         senhaText.setText("senha");
         usuarioText.setText("Digite o usuário");
     }
+
     public static boolean isValidEmail(String email) {
-        if (email == null) return false;
+        if (email == null)
+            return false;
         Matcher matcher = EMAIL_PATTERN.matcher(email);
         return matcher.matches();
     }
+
     public static boolean isDomainValid(String email) {
         try {
             String domain = email.substring(email.indexOf("@") + 1);
@@ -37,7 +41,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         cadastrarBotao = new javax.swing.JButton();
@@ -47,8 +52,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         loginTitulo = new javax.swing.JLabel();
         emailText = new javax.swing.JTextField();
         usuarioText = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JTextField();
         telaLogin = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1000, 562));
@@ -65,6 +71,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cadastrarBotaoMouseEntered(evt);
             }
+
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cadastrarBotaoMouseExited(evt);
             }
@@ -76,7 +83,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(cadastrarBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 200, 30));
 
-        senhaText.setBackground(new java.awt.Color(0,0,0,1));
+        senhaText.setBackground(new java.awt.Color(0, 0, 0, 1));
         senhaText.setForeground(new java.awt.Color(255, 255, 255));
         senhaText.setText("Digite a senha");
         senhaText.setToolTipText("Digite a senha");
@@ -86,6 +93,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 senhaTextFocusGained(evt);
             }
+
             public void focusLost(java.awt.event.FocusEvent evt) {
                 senhaTextFocusLost(evt);
             }
@@ -116,7 +124,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         loginTitulo.setText("CADASTRO");
         getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, -1, -1));
 
-        emailText.setBackground(new java.awt.Color(0,0,0,1));
+        emailText.setBackground(new java.awt.Color(0, 0, 0, 1));
         emailText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         emailText.setForeground(new java.awt.Color(255, 255, 255));
         emailText.setText("Digite o e-mail");
@@ -127,6 +135,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailTextFocusGained(evt);
             }
+
             public void focusLost(java.awt.event.FocusEvent evt) {
                 emailTextFocusLost(evt);
             }
@@ -138,7 +147,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 281, 180, 20));
 
-        usuarioText.setBackground(new java.awt.Color(0,0,0,1));
+        usuarioText.setBackground(new java.awt.Color(0, 0, 0, 1));
         usuarioText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         usuarioText.setForeground(new java.awt.Color(255, 255, 255));
         usuarioText.setText("Digite o usuário");
@@ -149,6 +158,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usuarioTextFocusGained(evt);
             }
+
             public void focusLost(java.awt.event.FocusEvent evt) {
                 usuarioTextFocusLost(evt);
             }
@@ -160,107 +170,118 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, 180, 30));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("copyright © As Aventuras De Brolli All rights reserved ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 20));
+        serietxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        serietxt.setToolTipText("Digite sua série");
+        serietxt.setBorder(null);
+        getContentPane().add(serietxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 180, -1));
 
         telaLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TelaCadastro5.jpg"))); // NOI18N
         getContentPane().add(telaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel1.setText("copyright © As Aventuras De Brolli All rights reserved ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusGained
-        if(emailText.getText().equals("Digite o email"))    
+    private void emailTextFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_emailTextFocusGained
+        if (emailText.getText().equals("Digite o email"))
             emailText.setText("");
-    }//GEN-LAST:event_emailTextFocusGained
-    private void emailTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusLost
-        if(emailText.getText().equals("")){
+    }// GEN-LAST:event_emailTextFocusGained
+
+    private void emailTextFocusLost(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_emailTextFocusLost
+        if (emailText.getText().equals("")) {
             emailText.setText("Digite o email");
         }
-    }//GEN-LAST:event_emailTextFocusLost
+    }// GEN-LAST:event_emailTextFocusLost
 
-    private void senhaTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_senhaTextFocusGained
+    private void senhaTextFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_senhaTextFocusGained
         String aux = new String(senhaText.getPassword());
-            if(aux.equals("Senha"))    
-                senhaText.setText("");
-    }//GEN-LAST:event_senhaTextFocusGained
+        if (aux.equals("Senha"))
+            senhaText.setText("");
+    }// GEN-LAST:event_senhaTextFocusGained
 
-    private void senhaTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_senhaTextFocusLost
+    private void senhaTextFocusLost(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_senhaTextFocusLost
         String aux = new String(senhaText.getPassword());
-            if(aux.equals("")){
-                senhaText.setText("Senha");
+        if (aux.equals("")) {
+            senhaText.setText("Senha");
         }
-    }//GEN-LAST:event_senhaTextFocusLost
+    }// GEN-LAST:event_senhaTextFocusLost
 
-    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
-         
-    }//GEN-LAST:event_emailTextActionPerformed
+    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_emailTextActionPerformed
 
-    private void senhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTextActionPerformed
+    }// GEN-LAST:event_emailTextActionPerformed
+
+    private void senhaTextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_senhaTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_senhaTextActionPerformed
+    }// GEN-LAST:event_senhaTextActionPerformed
 
-    private void cadastrarBotaoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarBotaoMouseExited
-                              
-    }//GEN-LAST:event_cadastrarBotaoMouseExited
+    private void cadastrarBotaoMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_cadastrarBotaoMouseExited
 
-    private void cadastrarBotaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarBotaoMouseEntered
+    }// GEN-LAST:event_cadastrarBotaoMouseExited
 
-    }//GEN-LAST:event_cadastrarBotaoMouseEntered
+    private void cadastrarBotaoMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_cadastrarBotaoMouseEntered
 
-    private void usuarioTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioTextFocusGained
-        if(usuarioText.getText().equals("Digite o usuário"))    
+    }// GEN-LAST:event_cadastrarBotaoMouseEntered
+
+    private void usuarioTextFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_usuarioTextFocusGained
+        if (usuarioText.getText().equals("Digite o usuário"))
             usuarioText.setText("");
-    }//GEN-LAST:event_usuarioTextFocusGained
+    }// GEN-LAST:event_usuarioTextFocusGained
 
-    private void usuarioTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioTextFocusLost
-       if(usuarioText.getText().equals("")){
+    private void usuarioTextFocusLost(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_usuarioTextFocusLost
+        if (usuarioText.getText().equals("")) {
             usuarioText.setText("Digite o usuário");
         }
-    }//GEN-LAST:event_usuarioTextFocusLost
+    }// GEN-LAST:event_usuarioTextFocusLost
 
-    private void usuarioTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTextActionPerformed
-       
-    }//GEN-LAST:event_usuarioTextActionPerformed
+    private void usuarioTextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_usuarioTextActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    }// GEN-LAST:event_usuarioTextActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         TocarSomOut tocar = new TocarSomOut();
         tocar.sound_click();
         TelaLogin telaDeLogin = new TelaLogin();
         telaDeLogin.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }// GEN-LAST:event_jButton1ActionPerformed
 
-    private void cadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarBotaoActionPerformed
-        var dao = new DAO(); 
-            Usuario a;
+    private void cadastrarBotaoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadastrarBotaoActionPerformed
+        var dao = new DAO();
+        Usuario a;
         String email = emailText.getText();
+        String s = serieText.getText();
+        int serie = Integer.parseInt(s);
         boolean b = isValidEmail(email);
         boolean c = isDomainValid(email);
-        if (b == true && c == true){
+        if (b == true && c == true) {
             try {
-                a = new Usuario(usuarioText.getText(), email, senhaText.getText());
+                a = new Usuario(usuarioText.getText(), email, senhaText.getText(), serie);
                 dao.cadastrarUsuario(a);
                 System.out.println("Usuario cadastrado");
             } catch (Exception ex) {
                 Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else{
+        } else {
             System.out.print("Email não valido");
         }
-    }//GEN-LAST:event_cadastrarBotaoActionPerformed
+    }// GEN-LAST:event_cadastrarBotaoActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -270,22 +291,26 @@ public class TelaCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -301,6 +326,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel loginTitulo;
     private javax.swing.JPasswordField senhaText;
+    private javax.swing.JTextField serietxt;
     private javax.swing.JLabel telaLogin;
     private javax.swing.JTextField usuarioText;
     // End of variables declaration//GEN-END:variables

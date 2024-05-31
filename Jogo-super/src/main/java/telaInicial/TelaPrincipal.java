@@ -5,6 +5,8 @@ import Quiz.QuizManager;
 import Ranking.TelaRanking;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 public class TelaPrincipal extends javax.swing.JFrame {
     private static QuizManager quizManager;
@@ -61,14 +63,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+  
     private void botaoJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoJogarActionPerformed
-        try {
-            quizManager = new QuizManager();
-            this.dispose();
-        } catch (Exception ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        JOptionPane loadingPane = new JOptionPane("Carregando, por favor aguarde...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
+        JDialog loadingDialog = loadingPane.createDialog(this, "Carregando");
+        loadingDialog.setModal(false);
+        loadingDialog.setVisible(true);
+        new Thread(() -> {
+            try {
+                quizManager = new QuizManager();
+                loadingDialog.dispose();
+                this.dispose();
+                // Aqui você pode iniciar a próxima tela/jogo, se necessário
+            } catch (Exception ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                loadingDialog.dispose();
+                JOptionPane.showMessageDialog(this, "Erro ao iniciar o jogo.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }).start();
+    
+
     }//GEN-LAST:event_botaoJogarActionPerformed
 
     private void botaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMenuActionPerformed

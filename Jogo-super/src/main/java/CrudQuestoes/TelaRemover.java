@@ -333,6 +333,19 @@ public class TelaRemover extends javax.swing.JFrame {
                 }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+private void limparcampos() {
+    // Limpar todos os campos relevantes
+    txtPergunta.setText("");
+    txtA.setText("");
+    txtB.setText("");
+    txtC.setText("");
+    txtD.setText("");
+    txtCorreta.setText("");
+    txtExplicacao.setText("");
+    jComboBox1.setSelectedIndex(0); // Selecione o primeiro item da combobox
+    jComboBox2.setSelectedIndex(0); // Selecione o primeiro item da combobox
+}
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
@@ -344,7 +357,8 @@ public class TelaRemover extends javax.swing.JFrame {
             
             QuestoesService.delete(q);
             
-           
+            JOptionPane.showMessageDialog(this, "A questão foi removida com sucesso!", "Questão Removida", JOptionPane.INFORMATION_MESSAGE);
+            this.limparcampos();
         }
         catch (Exception e)
         {
@@ -356,7 +370,8 @@ public class TelaRemover extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        MenuQuestions mq = new MenuQuestions();
+        mq.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
