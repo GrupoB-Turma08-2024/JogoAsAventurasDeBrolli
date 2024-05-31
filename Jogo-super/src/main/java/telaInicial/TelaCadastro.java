@@ -52,7 +52,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         loginTitulo = new javax.swing.JLabel();
         emailText = new javax.swing.JTextField();
         usuarioText = new javax.swing.JTextField();
+<<<<<<< HEAD
         jLabel1 = new javax.swing.JTextField();
+=======
+        serietxt = new javax.swing.JTextField();
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
         telaLogin = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -253,7 +257,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         var dao = new DAO();
         Usuario a;
         String email = emailText.getText();
+<<<<<<< HEAD
         String s = serieText.getText();
+=======
+        String s = serietxt.getText();
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
         int serie = Integer.parseInt(s);
         boolean b = isValidEmail(email);
         boolean c = isDomainValid(email);

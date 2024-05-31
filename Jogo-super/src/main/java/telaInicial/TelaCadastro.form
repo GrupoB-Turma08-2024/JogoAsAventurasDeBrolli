@@ -202,7 +202,11 @@
         </Constraint>
       </Constraints>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JTextField" name="serietext">
+=======
+    <Component class="javax.swing.JTextField" name="serietxt">
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>

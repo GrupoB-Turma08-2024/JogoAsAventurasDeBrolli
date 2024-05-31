@@ -218,7 +218,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="ButNovo">
       <Properties>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="Criar Usuário"/>
+=======
+        <Property name="text" type="java.lang.String" value="Criar Usu&#xe1;rio"/>
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButNovoActionPerformed"/>

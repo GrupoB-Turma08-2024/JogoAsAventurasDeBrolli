@@ -14,8 +14,13 @@ public class Usuario {
     private String email;
     private String senha;
     private int Serie;
+<<<<<<< HEAD
 
     public Usuario(String nome, String senha) throws Exception {
+=======
+    
+    public Usuario(String nome, String senha) throws Exception{
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
         this.setNome(nome);
         this.setSenha(senha);
     }
@@ -26,15 +31,30 @@ public class Usuario {
         this.setSenha(senha);
         this.setSerie(serie);
     }
+<<<<<<< HEAD
 
     public int getSerie() {
         return serie;
+=======
+    public Usuario(String nome, String email, String senha, int serie) throws Exception {
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setSenha(senha);
+        this.setSerie(serie);
+    }
+
+    public int getSerie() {
+        return Serie;
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
     }
 
     public void setSerie(int Serie) {
         this.Serie = Serie;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6e3fce4a15af4f01e941c8fa6950bb271fc0830b
     public Usuario(String nome, String email, String email2, String senha) throws Exception {
         this.setNome(nome);
         this.setEmail(email);
