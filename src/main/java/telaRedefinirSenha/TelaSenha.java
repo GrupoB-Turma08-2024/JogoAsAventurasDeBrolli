@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.TelaLogin;
@@ -25,6 +26,7 @@ public class TelaSenha extends javax.swing.JFrame {
 
     public TelaSenha() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         this.setLocationRelativeTo(null);
         esqueceuSenhaText.setOpaque(false);
         esqueceuSenhaText.setText("Digite o e-mail");

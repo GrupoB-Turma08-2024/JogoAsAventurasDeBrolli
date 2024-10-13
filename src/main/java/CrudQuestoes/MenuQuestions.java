@@ -5,6 +5,7 @@
 package CrudQuestoes;
 
 import java.awt.Cursor;
+import javax.swing.ImageIcon;
 import telaInicial.EfeitoSonoro;
 
 /**
@@ -18,6 +19,7 @@ public class MenuQuestions extends javax.swing.JFrame {
      */
     public MenuQuestions() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
     }
 

@@ -8,6 +8,7 @@ import Connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 
@@ -24,6 +25,7 @@ public class TelaConsultar extends javax.swing.JFrame {
      */
     public TelaConsultar() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         jTable2.setModel (QuestoesTabela);
         setLocationRelativeTo(null);
     }

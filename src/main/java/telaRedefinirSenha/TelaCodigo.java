@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 /**
@@ -27,6 +28,7 @@ public class TelaCodigo extends javax.swing.JFrame {
      */
     public TelaCodigo() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
         jTextField1.setOpaque(false);
     }

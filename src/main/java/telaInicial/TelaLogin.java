@@ -9,12 +9,14 @@ import java.awt.Cursor;
 import telaRedefinirSenha.*;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
 
     public TelaLogin() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         this.setLocationRelativeTo(null);
         usuarioText.setOpaque(false);
         senhaText.setOpaque(false);

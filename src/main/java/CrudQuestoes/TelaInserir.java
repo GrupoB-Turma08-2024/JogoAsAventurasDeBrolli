@@ -4,6 +4,7 @@
  */
 package CrudQuestoes;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 /**
@@ -17,6 +18,7 @@ public class TelaInserir extends javax.swing.JFrame {
      */
     public TelaInserir() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
         txtA.setOpaque(false);
         txtB.setOpaque(false);

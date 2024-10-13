@@ -4,12 +4,8 @@ import Quiz.Fase;
 import Quiz.QuizManager;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import telaInicial.EfeitoSonoro;
-import telaInicial.Musica;
 
 public class TelaQuiz extends javax.swing.JFrame {
 
@@ -19,6 +15,7 @@ public class TelaQuiz extends javax.swing.JFrame {
     public TelaQuiz(QuizManager quizManager){
         this.quizManager = quizManager;
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
         labelPergunta.setOpaque(true);
         labelPergunta.setBackground(new Color(0,0,0,100));

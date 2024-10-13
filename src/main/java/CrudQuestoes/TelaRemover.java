@@ -8,6 +8,7 @@ import Connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 /**
@@ -21,6 +22,7 @@ public class TelaRemover extends javax.swing.JFrame {
      */
     public TelaRemover() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         getId();
         setLocationRelativeTo(null);
         txtDificuldade.setOpaque(false);

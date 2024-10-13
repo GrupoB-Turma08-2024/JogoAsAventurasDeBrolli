@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.TelaLogin;
@@ -26,6 +27,7 @@ public class TelaRedefinirSenha extends javax.swing.JFrame {
      */
     public TelaRedefinirSenha() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         this.setLocationRelativeTo(null);
         jTextField1.setOpaque(false);
         jTextField2.setOpaque(false);

@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class TelaCadastro extends javax.swing.JFrame {
@@ -17,6 +18,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
     public TelaCadastro() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         this.setLocationRelativeTo(null);
         emailText.setOpaque(false);
         senhaText.setOpaque(false);

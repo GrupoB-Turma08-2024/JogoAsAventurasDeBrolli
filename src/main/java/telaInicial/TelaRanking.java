@@ -12,6 +12,7 @@ import Ranking.RankingTableModel;
 import Ranking.RankingTableModel;
 import Usuario.Usuario;
 import Usuario.UsuarioService;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -27,6 +28,7 @@ public class TelaRanking extends javax.swing.JFrame {
      */
     public TelaRanking() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         Tabela.setModel(tabelaUsuario);
         getRanking();
         setLocationRelativeTo(null);

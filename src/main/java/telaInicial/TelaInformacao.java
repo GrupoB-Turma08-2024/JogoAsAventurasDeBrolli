@@ -1,10 +1,13 @@
 
 package telaInicial;
 
+import javax.swing.ImageIcon;
+
 public class TelaInformacao extends javax.swing.JFrame {
 
     public TelaInformacao() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
     }
 

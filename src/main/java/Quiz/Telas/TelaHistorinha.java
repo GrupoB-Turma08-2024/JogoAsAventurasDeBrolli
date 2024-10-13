@@ -17,6 +17,7 @@ public class TelaHistorinha extends javax.swing.JFrame {
         this.qm = qm;
         this.nomeHistoria = nomeHistoria;
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
         for(String s : caminhoImagens){
             var imageURL = getClass().getClassLoader().getResource(s);

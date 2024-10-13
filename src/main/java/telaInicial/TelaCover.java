@@ -1,10 +1,13 @@
 
 package telaInicial;
 
+import javax.swing.ImageIcon;
+
 public class TelaCover extends javax.swing.JFrame {
     
     public TelaCover() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
         Musica.Play("inicio.wav");
         this.setVisible(true);

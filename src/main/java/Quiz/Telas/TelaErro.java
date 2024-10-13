@@ -3,6 +3,7 @@ package Quiz.Telas;
 import Quiz.Fase;
 import Quiz.QuizManager;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class TelaErro extends javax.swing.JFrame {
@@ -12,6 +13,7 @@ public class TelaErro extends javax.swing.JFrame {
     
     public TelaErro(QuizManager qM,Fase fase, String explicacao) {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         quizManager = qM;
         if(quizManager.getFaseAtual().isBonus()){
             botaoTentarNovamente.setText("PRÓXIMA PERGUNTA");

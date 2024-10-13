@@ -2,6 +2,7 @@ package Quiz.Telas;
 
 import Quiz.QuizManager;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class TelaLousa extends javax.swing.JFrame {
@@ -11,6 +12,7 @@ public class TelaLousa extends javax.swing.JFrame {
     
     public TelaLousa(QuizManager qM, String explicacao) {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         quizManager = qM;
         setLocationRelativeTo(null);
         labelExplicacao.setText(quebrarTexto(explicacao, 450));

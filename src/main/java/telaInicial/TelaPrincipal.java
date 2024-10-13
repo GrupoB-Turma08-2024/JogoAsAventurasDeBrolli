@@ -5,6 +5,7 @@ import Quiz.QuizManager;
 import java.awt.Cursor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class TelaPrincipal extends javax.swing.JFrame {
@@ -13,6 +14,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     public TelaPrincipal() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
     }
 

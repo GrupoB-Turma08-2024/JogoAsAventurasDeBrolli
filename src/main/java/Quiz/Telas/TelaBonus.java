@@ -1,6 +1,7 @@
 package Quiz.Telas;
 
 import Quiz.QuizManager;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class TelaBonus extends javax.swing.JFrame{
@@ -11,6 +12,7 @@ public class TelaBonus extends javax.swing.JFrame{
     public TelaBonus(QuizManager q) {
         this.q = q;
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
         setVisible(true);
     }

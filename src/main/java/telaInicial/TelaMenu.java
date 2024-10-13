@@ -1,12 +1,14 @@
 
 package telaInicial;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class TelaMenu extends javax.swing.JFrame {
 
     public TelaMenu() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         setLocationRelativeTo(null);
     }
 

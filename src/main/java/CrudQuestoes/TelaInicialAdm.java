@@ -4,6 +4,7 @@ package CrudQuestoes;
 import CrudQuestoes.MenuQuestions;
 import Usuario.CrudUsuarios;
 import java.awt.Cursor;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import telaInicial.EfeitoSonoro;
 import telaInicial.TelaLogin;
@@ -15,6 +16,7 @@ public class TelaInicialAdm extends javax.swing.JFrame {
 
     public TelaInicialAdm() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
          setLocationRelativeTo(null);
     }
 
