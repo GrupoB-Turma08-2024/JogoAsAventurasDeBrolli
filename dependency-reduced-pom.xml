@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mycompany</groupId>
+  <groupId>GrupoB-Turma08-2024</groupId>
   <artifactId>AsAventurasDeBrolli</artifactId>
   <name>AsAventurasDeBrolliPI</name>
   <version>1.0</version>
+  <description>Um jogo sobre o sistema digestório.</description>
   <build>
     <resources>
       <resource>
@@ -35,7 +36,7 @@
   </build>
   <properties>
     <maven.compiler.target>21</maven.compiler.target>
-    <exec.mainClass>com.mycompany.asaventurasdebrolli.AsAventurasDeBrolli</exec.mainClass>
+    <exec.mainClass>GrupoB-Turma08-2024.asaventurasdebrolli.AsAventurasDeBrolli</exec.mainClass>
     <maven.compiler.source>21</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

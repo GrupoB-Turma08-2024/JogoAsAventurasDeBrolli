@@ -16,6 +16,7 @@ public class TelaInformacao extends javax.swing.JFrame {
         telaLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(1000, 562));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -45,14 +46,6 @@ public class TelaInformacao extends javax.swing.JFrame {
         tm.setVisible (true);
         dispose();
     }//GEN-LAST:event_voltarBotaoActionPerformed
-
-    
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(() -> {
-            new TelaInformacao().setVisible(true);
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel telaLogin;

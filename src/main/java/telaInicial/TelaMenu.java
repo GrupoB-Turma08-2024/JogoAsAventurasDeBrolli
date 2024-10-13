@@ -27,6 +27,7 @@ public class TelaMenu extends javax.swing.JFrame {
         logoutImagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(1000, 562));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -206,13 +207,6 @@ public class TelaMenu extends javax.swing.JFrame {
         tc.setVisible(true);
         dispose();
     }//GEN-LAST:event_creditoBotaoActionPerformed
-
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(() -> {
-            new TelaMenu().setVisible(true);
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton creditoBotao;
