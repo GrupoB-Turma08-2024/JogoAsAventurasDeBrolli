@@ -66,7 +66,11 @@ public class TelaRanking extends javax.swing.JFrame {
         logoutImagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 560));
+        setMinimumSize(new java.awt.Dimension(1000, 560));
+        setPreferredSize(new java.awt.Dimension(1000, 560));
         setResizable(false);
+        setSize(new java.awt.Dimension(1000, 560));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Tabela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));

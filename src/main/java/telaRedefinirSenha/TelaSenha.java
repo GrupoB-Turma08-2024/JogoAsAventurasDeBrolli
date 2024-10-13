@@ -28,6 +28,7 @@ public class TelaSenha extends javax.swing.JFrame {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/icon.png")).getImage());
         this.setLocationRelativeTo(null);
+        this.setSize(1000, 560);
         esqueceuSenhaText.setOpaque(false);
         esqueceuSenhaText.setText("Digite o e-mail");
     }
@@ -56,12 +57,12 @@ public class TelaSenha extends javax.swing.JFrame {
         esqueceuSenhaText = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         voltarLogin = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         telaLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 560));
         setResizable(false);
-        setSize(new java.awt.Dimension(1000, 562));
+        setSize(new java.awt.Dimension(1000, 560));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         entrarBotao.setBackground(new java.awt.Color(40, 40, 40));
@@ -78,10 +79,14 @@ public class TelaSenha extends javax.swing.JFrame {
         });
         getContentPane().add(entrarBotao, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, 200, 30));
 
-        loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 52)); // NOI18N
+        loginTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 36)); // NOI18N
         loginTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        loginTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginTitulo.setText("REDEFINIR SENHA");
-        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
+        loginTitulo.setToolTipText("");
+        loginTitulo.setAlignmentY(0.0F);
+        loginTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(loginTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, -1));
 
         esqueceuSenhaText.setBackground(new java.awt.Color(0,0,0,1));
         esqueceuSenhaText.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -108,7 +113,7 @@ public class TelaSenha extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         jLabel1.setText("copyright © As Aventuras De Brolli All rights reserved ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, 20));
 
         voltarLogin.setBackground(new java.awt.Color(0, 0, 0));
         voltarLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +132,6 @@ public class TelaSenha extends javax.swing.JFrame {
             }
         });
         getContentPane().add(voltarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 420, 80, 30));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 60, -1));
 
         telaLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_telas/telaSenha_1.jpg"))); // NOI18N
         getContentPane().add(telaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
@@ -197,7 +201,6 @@ public class TelaSenha extends javax.swing.JFrame {
     private javax.swing.JButton entrarBotao;
     private javax.swing.JTextField esqueceuSenhaText;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel loginTitulo;
     private javax.swing.JLabel telaLogin;
     private javax.swing.JButton voltarLogin;

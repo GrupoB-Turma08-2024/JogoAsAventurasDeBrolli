@@ -70,7 +70,9 @@ public class TelaCodigo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 560));
         setResizable(false);
+        setSize(new java.awt.Dimension(1000, 560));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         voltarBotao.setBackground(new java.awt.Color(0, 0, 0));
