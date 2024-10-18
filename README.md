@@ -42,10 +42,4 @@ Estamos animados em anunciar uma parceria com o Colégio Piaget! Juntos, estamos
 
 ## Instalação
 
-Instale as dependências do Java e VsCode e rode-o
-
-```bash
-    mkdir JogoAsAventurasDeBrolli
-    cd JogoAsAventurasDeBrolli
-    git clone https://github.com/GrupoB-Turma08-2024/JogoAsAventurasDeBrolli.git
-```
+A instalação do jogo é extremamente simples, basta fazer o download do executável e já poderá jogar.
