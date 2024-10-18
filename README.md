@@ -41,5 +41,5 @@ Estamos animados em anunciar uma parceria com o Colégio Piaget! Juntos, estamos
 **Mapa do jogo:** Java, Procreate
 
 ## Instalação
-
 A instalação do jogo é extremamente simples, basta fazer o download do executável e já poderá jogar.
+### [<ins>Clique aqui para baixar o jogo.</ins>](https://github.com/GrupoB-Turma08-2024/JogoAsAventurasDeBrolli/releases/download/v1.0.0/As.Aventuras.De.Brolli.exe)
