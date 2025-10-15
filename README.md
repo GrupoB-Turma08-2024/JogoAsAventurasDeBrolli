@@ -13,7 +13,7 @@ Estamos animados em anunciar uma parceria com o Colégio Piaget! Juntos, estamos
 
 ## Documentação do Projeto Integrador
 
-[As Aventuras De Brolli Documentation](https://heyzine.com/flip-book/9e02c33820.html)
+[As Aventuras De Brolli ](https://heyzine.com/flip-book/9e02c33820.html)
 
 
 ## Screenshots
